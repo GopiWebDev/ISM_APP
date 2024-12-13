@@ -1,9 +1,7 @@
 import express from 'express';
-// dotenv to acces env files
 import dotenv from 'dotenv';
 dotenv.config();
 
-// /subject route shows list of all subjects
 import subjectsRouter from './routes/subjectsRoute.js';
 
 const app = express();
@@ -13,7 +11,7 @@ app.get('/', (_req, res) => {
   res.send('HELLO');
 });
 
-app.use('/subjects', subjectsRouter);
+app.use('/api/subjects', subjectsRouter);
 
 const PORT = process.env.PORT || 3000;
 
